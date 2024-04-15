@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="gallery">
+    <div class="thumbnail" onclick="openModal('image1.jpg')">
+        <img src="https://t4.ftcdn.net/jpg/05/18/69/85/240_F_518698520_Xk9tIwoYpyX6kkVsF6GpQ1z7sKXO8YRz.jpg" alt="Thumbnail 1">
+    </div>
+    <div class="thumbnail" onclick="openModal('image2.jpg')">
+        <img src="https://t3.ftcdn.net/jpg/03/75/29/46/240_F_375294645_YZ1qfcGxbLoLmLLVCCbIC1G8bOblM8Rk.jpg" alt="Thumbnail 2">
+    </div>
+    <!-- Add more thumbnail divs as needed -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged Image">
+    </div>
+</div>
+
+<script>
+    function openModal(imageSrc) {
+        var modal = document.getElementById('myModal');
+        var modalImage = document.getElementById('modalImage');
+
+        modal.style.display = 'flex';
+        modalImage.src = imageSrc;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+    }
+</script>
+<!-- second -->
+<div class="slideshow-container">
+    <!-- Slides -->
+    <div class="mySlides">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWRhhpy-fc4_JRYa6c3C2zCaNYEEQ1yV8Vrw&usqp=CAU" alt="Image 1" width="600" height="600">
+    </div>
+    <div class="mySlides">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGek-Y-zKl2jcLvtHfWl-Dc85jnCt_YtlvQ&usqp=CAU" alt="Image 2" width="600" height="600">
+    </div>
+    <div class="mySlides">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiKJmJOgkSlJN2uAAnWvk9cvW-0WNSok-JvQ&usqp=CAU" alt="Image 3" width="600" height="600">
+    </div>
+  
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <!-- Optional: Add dots/bullets for navigation -->
+  <div style="text-align: center; margin-top: 20px;">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  
+  <script>
+    let slideIndex = 0;
+    showSlides();
+  
+    function showSlides() {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+  
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+  
+      slideIndex++;
+  
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+  
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+  
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+  
+      setTimeout(showSlides, 2000); // Change slide every 2 seconds
+    }
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+  </script>
+
+</body>
+</html>

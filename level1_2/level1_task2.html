@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport">
+	<link rel="stylesheet" type="text/css" href="test.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .btn-success{
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+    </style>
+	<script>
+		var count = 0;
+function myfunction(x) {
+	var x;
+
+    	if(x == 1){
+    		count = count+1;
+    		console.log(count)
+    	}
+
+    	if(count == 1){
+    		document.getElementById("change").style.background = 'red';
+    	}
+        if(count == 2){
+    		document.getElementById("change").style.background = 'green';
+    	}
+        if(count == 3){
+    		document.getElementById("change").style.background = 'pink';
+    	}
+    	else if(count == 4){
+    		document.getElementById("change").style.background = 'yellow';
+    		count = 0;
+    	}
+
+}
+
+</script>
+	<!--<script type="text/javascript" src="test.js"></script>-->
+	<title>Document</title>
+</head>
+<body>
+	Enter number1:<input type="text" value="" id="p1"><br>
+    Enter number2:<input type="text" value="" id="p2"><br>
+    <input type="button" value="+" onclick="sum()">
+    <input type="button" value="-" onclick="sub()">
+    <input type="button" value="*" onclick="mult()">
+    <input type="button" value="/" onclick="div()">
+    <p id="yash"></p>
+	<script>
+        function sum(){
+            var n1=document.getElementById('p1').value;
+            var n2=document.getElementById('p2').value;
+            a=parseInt(n1);
+            b=parseInt(n2);
+            var c=a+b
+            alert(c)
+            document.getElementById("yash").innerHTML="sum of the number is:"+c;
+        }
+        function sub(){
+            var n1=document.getElementById('p1').value;
+            var n2=document.getElementById('p2').value;
+            a=parseInt(n1);
+            b=parseInt(n2);
+            var c=a-b
+            alert(c)
+            document.getElementById("yash").innerHTML="sub of the number is:"+c;
+        }
+        function mult(){
+            var n1=document.getElementById('p1').value;
+            var n2=document.getElementById('p2').value;
+            a=parseInt(n1);
+            b=parseInt(n2);
+            var c=a*b
+            alert(c)
+            document.getElementById("yash").innerHTML="mult of the number is:"+c;
+        }
+        function div(){
+            var n1=document.getElementById('p1').value;
+            var n2=document.getElementById('p2').value;
+            a=parseInt(n1);
+            b=parseInt(n2);
+            var c=a/b
+            alert(c)
+            document.getElementById("yash").innerHTML="div of the number is:"+c;
+        }
+    </script>
+	<br>
+	Enter a message:<input type="text" value="" id="p2"><br>
+	<input type="button" value="message" onclick="message()">
+	<p id="m1"></p>
+<script>
+function message(){
+            var n1=document.getElementById('p2').value;
+            alert(n1)
+            document.getElementById("m1").innerHTML="Display a message:"+n1;
+        }
+</script>
+	
+
+
+
+<button id="change" onclick="myfunction(1)" class="btn btn-success">click</button>
+
+
+</body>
+</html>
